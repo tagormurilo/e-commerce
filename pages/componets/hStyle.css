@@ -1,0 +1,38 @@
+.my-custom-navbar {
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+}
+#sections a {
+    color: #FFD700;
+}
+#btLogo {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #8B4513;
+}
+#uIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid #8B4513;
+}
+.d-flex {
+    height: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 5px;
+    align-items: center;
+}
+.d-flex input {
+    border-radius: 5px;
+    border: 1px solid #8B4513;
+}
+.btn-custom {
+    color: #8B4513;
+    border-color: #8B4513;
+}
+.btn-custom:hover {
+    background-color: #8B4513;
+    color: #FFD700;
+}
