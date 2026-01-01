@@ -1,0 +1,12 @@
+.modal-header{
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+    color: #FFD700;
+}
+.custom-close {
+    margin-left: 350px;
+}
+.modal-footer{
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+}

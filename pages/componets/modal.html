@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cofre das Manas</title>
+    <link rel="icon" type="image/x-icon" href="../images/IconLj.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="fStyle.css" rel="stylesheet">
+    <link href="hStyle.css" rel="stylesheet">
+    <link href="mStyle.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Botão para abrir o modal -->
+    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="cart">
+        <img src="../images/shopping-cart.svg" alt="carrinho e compras">
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Carrinho</h1>
+            <button type="button" class="btn custom-close" data-bs-dismiss="modal" aria-label="Close">
+                <img src="../images/x.svg" alt="botão x">
+            </button>
+        </div>
+        <div class="modal-body modal-dialog-scrollable">
+            Seu carrinho está vazio!
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Fechar</button>
+            <a href="../finalizacao.html">
+                <button type="button" class="btn btn-custom">Comprar</button>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
