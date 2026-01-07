@@ -1,0 +1,10 @@
+#imgBanner1, #imgBanner2, #imgBanner3 {
+    height: 470px;
+    width: 940px;
+    object-position: center;
+    object-fit: cover;
+}
+#inicio {
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+}
