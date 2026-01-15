@@ -81,7 +81,7 @@
     <main>
         <h1>Trocas</h1>
         <div class="card">
-            <h5 class="card-header">Carta Enviada</h5>
+            <h5 class="card-header">Descrição da Carta</h5>
             <div class="card-body">
                 <form>
                     <div class="mb-3">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Card Game</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" id="cardGame">
                             <option selected>Escolha uma das opções</option>
                             <option value="1">Yu-Gi-Oh</option>
                             <option value="2">Magic: The Gathering</option>
@@ -170,13 +170,46 @@
                             <option value="5">Rara Secreta</option>
                             <option value="6">Promo</option>
                             <option value="7">Reverse Holo</option>
-                        </select>                    
+                        </select>
+                    </div> 
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Imagens da Carta</label>
+                        <div id="drop-area">
+                            <form class="my-form">
+                                <p>Arraste suas imagens para cá ou clique para seleciona-las</p>
+                                <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+                                <label class="button" for="fileElem">Selecionar Imagem</label>
+                            </form>
+                            <div id="gallery"></div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Valor Desejado</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">R$</span>
+                            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Descrição</label>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" for="checkDefault">
+                            Aceita o valor em saldo na loja?
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" for="checkDefault">
+                            Aceita trocas e negociações pela carta?
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
-        </div>
-        
+        </div> 
     </main>
     <footer>
         <nav class="navbar bg-body-tertiary my-custom-navbar" id="footer">
@@ -196,6 +229,7 @@
             </div>
         </nav>
     </footer>
+    <script src="trocas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

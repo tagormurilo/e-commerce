@@ -1,1 +1,45 @@
-ok
+main {
+    justify-items: center;
+    padding: 20px;
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+}
+h1 {
+    color: #FFD700;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card {
+    margin-bottom: 20px;
+    width: 600px;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efeito visual quando o arquivo estiver sobre a área */
+#drop-area.highlight {
+    border-color: #61afef;
+    background-color: #f0f8ff;
+}
+
+#fileElem {
+    display: none; /* Esconde o input padrão feio */
+}
+
+#gallery img {
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
