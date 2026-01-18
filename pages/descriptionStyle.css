@@ -1,0 +1,31 @@
+main {
+    background: #000000;
+    background: linear-gradient(347deg, rgba(0, 0, 0, 1) 30%, rgba(75, 0, 130, 1) 100%);
+    display: flex;
+    justify-content: center;
+}
+.produto {
+    width: 400px;
+    height: auto;
+    justify-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#descricao {
+    width: 400px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#colecao {
+    width: 400px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.mb-3 {
+    justify-content: center!important;  
+}
+.input-qtd {
+    text-align: center;
+}
