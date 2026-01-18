@@ -1,61 +1,124 @@
 let dropArea = document.getElementById('drop-area');
 const gameOption = document.getElementById('cardGame');
+const rareYugi = document.getElementById('rareYugi');
+const espRareYugi = document.getElementById('espRareYugi');
+const rareMagic = document.getElementById('rareMagic');
+const espRareMagic = document.getElementById('espRareMagic');
+const rarePoke = document.getElementById('rarePoke');
+const espRarePoke = document.getElementById('espRarePoke');
+vericarLogin();
+rareYugi.style.display = 'none';
+espRareYugi.style.display = 'none';
+rareMagic.style.display = 'none';
+espRareMagic.style.display = 'none';
+rarePoke.style.display = 'none';
+espRarePoke.style.display = 'none';
 gameOption.addEventListener('change', (event) => {
   console.log("Jogo selecionado:", event.target.value);
-  // Aqui você pode adicionar lógica adicional com base na seleção do jogo
+  if (gameOption.value === "1") {
+    rareYugi.style.display = 'block';
+    espRareYugi.style.display = 'block';
+    rareMagic.style.display = 'none';
+    espRareMagic.style.display = 'none';
+    rarePoke.style.display = 'none';
+    espRarePoke.style.display = 'none';
+  } else if (gameOption.value === "2") {
+    rareMagic.style.display = 'block';
+    espRareMagic.style.display = 'block';
+    rareYugi.style.display = 'none';
+    espRareYugi.style.display = 'none';
+    rarePoke.style.display = 'none';
+    espRarePoke.style.display = 'none';
+  } else if (gameOption.value === "3") {
+    rarePoke.style.display = 'block';
+    espRarePoke.style.display = 'block';
+    rareYugi.style.display = 'none';
+    espRareYugi.style.display = 'none';
+    rareMagic.style.display = 'none';
+    espRareMagic.style.display = 'none';
+  }
 });
-
-// 1. Prevenir comportamentos padrão (abrir a imagem no navegador)
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, preventDefaults, false);
+    dropArea.addEventListener(eventName, preventDefaults, false);
+    document.body.addEventListener(eventName, preventDefaults, false); // Bloqueia na página toda
 });
-
-function preventDefaults (e) {
-  e.preventDefault();
-  e.stopPropagation();
+function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
 }
-
-// 2. Adicionar efeito visual de destaque ao arrastar sobre a área
-['dragenter', 'dragover'].forEach(eventName => {
-  dropArea.addEventListener(eventName, () => dropArea.classList.add('highlight'), false);
-});
-
-['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, () => dropArea.classList.remove('highlight'), false);
-});
-
-// 3. Lidar com os arquivos soltos (Drop)
-dropArea.addEventListener('drop', handleDrop, false);
-
-function handleDrop(e) {
-  let dt = e.dataTransfer;
-  let files = dt.files;
-  handleFiles(files);
-}
-
-// 4. Processar o arquivo (seja por clique ou arraste)
-function handleFiles(files) {
-  let file = files[0]; // Pegamos apenas a primeira imagem
-  if (file && file.type.startsWith('image/')) {
-    previewFile(file);
-    console.log("Arquivo selecionado:", file.name);
-    // Aqui você pode salvar o arquivo ou enviar para um servidor
-  }
-}
-
-// Função para mostrar a imagem na tela (Preview)
-function previewFile(file) {
-  let reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onloadend = function() {
-    let img = document.createElement('img');
-    img.src = reader.result;
-    document.getElementById('gallery').innerHTML = ""; // Limpa anterior
-    document.getElementById('gallery').appendChild(img);
-  }
-}
-
-// 5. Permitir clique na área para abrir o seletor
+dropArea.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    handleFiles(files);
+}, false);
 dropArea.addEventListener('click', () => {
-  document.getElementById('fileElem').click();
+    document.getElementById('fileElem').click();
+});
+let imgArray = []; 
+const MAX_IMAGENS = 5;
+const gallery = document.getElementById('gallery');
+function handleFiles(files) {
+    let filesToProcess = Array.from(files);
+    filesToProcess.forEach(file => {
+      if (file.type.startsWith('image/')) {
+        if (imgArray.length < MAX_IMAGENS) {
+          imgArray.push(file);
+          previewFile(file);
+        } else {
+          alert('Limite máximo de 5 imagens atingido!');
+        }
+    }
+  });
+}
+function previewFile(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function() {
+      let div = document.createElement('div');
+      div.style.position = 'relative';
+      div.style.display = 'inline-block';
+      let img = document.createElement('img');
+      img.src = reader.result;
+      img.className = 'thumb';
+      let btnRemover = document.createElement('button');
+      btnRemover.innerText = 'X';
+      btnRemover.className = 'btn-delete';
+      btnRemover.onclick = (e) => {
+        e.stopPropagation(); 
+        div.remove(); 
+        imgArray = imgArray.filter(f => f !== file); 
+      };
+      div.appendChild(img);
+      div.appendChild(btnRemover);
+      gallery.appendChild(div);
+    }
+}
+function vericarLogin() {
+    const usuarioLogado = localStorage.getItem('logado');
+    if (usuarioLogado === null) {
+        window.location.href = 'login.html';
+    } else {
+        document.getElementById('uIcon').src = '../pages/images/power.svg';
+        document.getElementById('login').addEventListener('click', function(event) {
+          event.preventDefault();
+          logoutUser();
+      });
+    }
+};
+function logoutUser() {
+    localStorage.clear();
+    window.location.href = 'initial.html';
+};
+document.getElementById('enviar').addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('Formulário enviado com sucesso!');
+    imgArray = [];
+    gallery.innerHTML = '';
+    gameOption.value = '';
+    rareYugi.style.display = 'none';
+    espRareYugi.style.display = 'none';
+    rareMagic.style.display = 'none';
+    espRareMagic.style.display = 'none';
+    rarePoke.style.display = 'none';
+    espRarePoke.style.display = 'none';
 });

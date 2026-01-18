@@ -36,6 +36,7 @@
                                 Card Games
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listItem.html">Todos os Produtos</a></li>
                                 <li><a class="dropdown-item" href="#">Yu-Gi-Oh</a></li>
                                 <li><a class="dropdown-item" href="#">Magic: The Gathering</a></li>
                                 <li><a class="dropdown-item" href="#">Pokémon</a></li>
@@ -45,7 +46,7 @@
                     <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="cart">
                         <img src="../pages/images/shopping-cart.svg" alt="carrinho e compras">
                     </button>
-                    <a class="navbar-brand" href="login.html">
+                    <a class="navbar-brand" href="login.html" id="login">
                         <img src="../pages/images/user.svg" alt="user icon" id="uIcon">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +56,7 @@
             </div>
         </nav>
     </header>
-    <!-- Modal -->
+    <!-- Carrinho -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -97,7 +98,7 @@
                             <option value="3">Pokémon</option>
                         </select>                    
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="rareYugi">
                         <label for="name" class="form-label">Raridade</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Escolha uma das opções</option>
@@ -107,7 +108,7 @@
                             <option value="4">Ultra Rara</option>
                         </select>                    
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="espRareYugi">
                         <label for="name" class="form-label">Raridade Especial</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Escolha uma das opções</option>
@@ -119,7 +120,7 @@
                             <option value="6">Quarter Century Rare</option>
                         </select>                    
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="rareMagic">
                         <label for="name" class="form-label">Raridade</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Escolha uma das opções</option>
@@ -129,7 +130,7 @@
                             <option value="4">Mítica Rara</option>
                         </select>                    
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="espRareMagic">
                         <label for="name" class="form-label">Raridade Especial</label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="checkDefault">
@@ -150,7 +151,7 @@
                             </label>
                         </div>                   
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="rarePoke">
                         <label for="name" class="form-label">Raridade</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Escolha uma das opções</option>
@@ -159,7 +160,7 @@
                             <option value="3">Rara</option>
                         </select>                    
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="espRarePoke">
                         <label for="name" class="form-label">Raridade Especial</label>
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Escolha uma das opções</option>
@@ -177,8 +178,8 @@
                         <div id="drop-area">
                             <form class="my-form">
                                 <p>Arraste suas imagens para cá ou clique para seleciona-las</p>
-                                <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
-                                <label class="button" for="fileElem">Selecionar Imagem</label>
+                                <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                <label class="button" for="fileElem"></label>
                             </form>
                             <div id="gallery"></div>
                         </div>
@@ -206,7 +207,7 @@
                             Aceita trocas e negociações pela carta?
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
                 </form>
             </div>
         </div> 
