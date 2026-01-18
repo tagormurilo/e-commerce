@@ -54,3 +54,24 @@ function AtualizarPreco(card) {
     const precoTotalFormatado = precoTotal.toFixed(2).replace(".", ",");
     elementoPreco.innerText = precoTotalFormatado;
 }
+const cartas = [
+    {id: 1, nome: "Blastoise EX", raridade: "Ilustração Especial Rara", preco: "R$ 900,00", categoria: "Pokémon"},
+    {id: 2, nome: "Decodificar Transmissor", raridade: "Ultra Rara", preco: "R$ 1,00", categoria: "Yu-gi-oh"},
+    {id: 3, nome: "Ilha", raridade: "Comum", preco: "R$ 0,20", categoria: "Magic: The Gathering"},
+    {id: 4, nome: "Ilha Full Art", raridade: "Comum", preco: "R$ 5,62", categoria: "Magic: The Gathering"},
+    {id: 5, nome: "Pikachu", raridade: "Comum", preco: "R$ 0,20", categoria: "Pokémon"},
+    {id: 6, nome: "Mago Negro", raridade:"Ultra Rara" , preco:"R$ 18,00" , categoria:"Yu-gi-oh" },
+];
+const containerItens = document.getElementById('lista-itens');
+const spanTermo = document.getElementById('termo-busca');
+const urlParams = new URLSearchParams(window.location.search);
+const termo = urlParams.get('busca')?.toLowerCase() || "";
+spanTermo.textContent = termo;
+function filtrarEExibir() {
+    const resultados = produtos.filter(produto => {
+        return produto.nome.toLowerCase().includes(termo) || 
+               produto.categoria.toLowerCase().includes(termo);
+    });
+    containerItens.innerHTML = "";
+}
+filtrarEExibir();
