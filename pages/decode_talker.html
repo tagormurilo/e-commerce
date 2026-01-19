@@ -9,7 +9,7 @@
     <link href="../pages/componets/fStyle.css" rel="stylesheet">
     <link href="../pages/componets/hStyle.css" rel="stylesheet">
     <link href="../pages/componets/mStyle.css" rel="stylesheet">
-    <link href="listItemStyle.css" rel="stylesheet">
+    <link href="descriptionStyle.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -85,44 +85,56 @@
     </div>
     <!-- Conteúdo -->
     <main>
-        <div class="card produto" style="width: 18rem;">
-            <img src="../pages/images/produtos/mago_negro.jpg" class="card-img-top" alt="...">
+        <div class="card text-center produto">
             <div class="card-body">
-                <label for="cardButton"><b>Raridade</b></label><br>
-                <button class="btn btn-outline btn-custom" type="button">Ultra Rara</button>
-                <a href="mago_negro.html" class="title"><h5 class="card-title name-item">Mago Negro</h5></a>
-                <h5>R$ <span class="preco" data-valor="18,00">18,00</span></h5>
-                <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                <section class="inicial" id="inicio">
+                    <img src="../pages/images/produtos/decode_talker.jpg" class="card-img-top" alt="...">
+                    <label for="cardButton"><b>Raridade</b></label><br>
+                    <button class="btn btn-outline btn-custom" type="button">Ultra Rara</button>
+                    <h5 class="card-title name-item">Decodificar Transmissor</h5>
+                    <h5>R$ <span class="preco" data-valor="1,00">1,00</span></h5>
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
+                            <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
+                        </div>
                     </div>
-                    <div class="btn-group me-2" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
-                        <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
-                    </div>
-                </div>
-                <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
+                    <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
+                </section>
             </div>
         </div>
-        <div class="card produto" style="width: 18rem;">
-            <img src="../pages/images/produtos/decode_talker.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <label for="cardButton"><b>Raridade</b></label><br>
-                <button class="btn btn-outline btn-custom" type="button">Ultra Rara</button>
-                <a href="decode_talker.html" class="title"><h5 class="card-title name-item">Decodificar Transmissor</h5></a>
-                <h5>R$ <span class="preco" data-valor="1,00">1,00</span></h5>
-                <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
-                    </div>
-                    <div class="btn-group me-2" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
-                        <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
-                    </div>
+        <section class="description-produto" id="descricao">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Descrição do Produto</h2>
+                    <p>
+                        Tipo: Trevas <br>
+                        Link-3 <br>
+                        Ataque 2300 <br>
+                        Ciberso/Link/Efeito <br><br>
+
+                        Texto do Card <br>
+                        2+ Monstros de Efeito <br>
+                        Ganha 500 de ATK para cada monstro para o qual ele apontar. Quando seu oponente ativar um card ou efeito que escolha como alvo um ou mais cards que você controla (Efeito Rápido): você pode oferecer como Tributo 1 monstro para o qual este card apontar; negue a ativação e, se isso acontecer, destrua esse card.
+                    </p>
                 </div>
-                <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
             </div>
-        </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Coleção</h2>
+                    <p>
+                        Devastador de Duelos <br>
+                        Os Duelos mudaram bastante desde a introdução dos Monstros Link em 2017. Agora você pode turbinar seu Deck Adicional e Deck Auxiliar para acompanhar as últimas tendências dos Duelos! Nós analisamos os melhores Decks que conquistaram a vitória em torneios no ano anterior e reunimos 30 escolhas populares para os Decks Auxiliares e 20 monstros para os Decks Adicionais.<br><br>
+
+                        Código <br> 
+                        DUDE-PT023
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <nav class="navbar bg-body-tertiary my-custom-navbar" id="footer">

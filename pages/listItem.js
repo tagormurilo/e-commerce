@@ -54,6 +54,7 @@ function AtualizarPreco(card) {
     const precoTotalFormatado = precoTotal.toFixed(2).replace(".", ",");
     elementoPreco.innerText = precoTotalFormatado;
 }
+
 const cartas = [
     {id: 1, nome: "Blastoise EX", raridade: "Ilustração Especial Rara", preco: "R$ 900,00", categoria: "Pokémon"},
     {id: 2, nome: "Decodificar Transmissor", raridade: "Ultra Rara", preco: "R$ 1,00", categoria: "Yu-gi-oh"},
@@ -62,16 +63,24 @@ const cartas = [
     {id: 5, nome: "Pikachu", raridade: "Comum", preco: "R$ 0,20", categoria: "Pokémon"},
     {id: 6, nome: "Mago Negro", raridade:"Ultra Rara" , preco:"R$ 18,00" , categoria:"Yu-gi-oh" },
 ];
-const containerItens = document.getElementById('lista-itens');
-const spanTermo = document.getElementById('termo-busca');
 const urlParams = new URLSearchParams(window.location.search);
 const termo = urlParams.get('busca')?.toLowerCase() || "";
-spanTermo.textContent = termo;
-function filtrarEExibir() {
-    const resultados = produtos.filter(produto => {
-        return produto.nome.toLowerCase().includes(termo) || 
-               produto.categoria.toLowerCase().includes(termo);
+const cardsNaPagina = document.querySelectorAll('.card.produto');
+function filtrarCardsExistentes() {
+    if (!termo) {
+        cardsNaPagina.forEach(card => card.style.display = "block");
+        return;
+    }
+    let encontrouAlgo = false;
+    cardsNaPagina.forEach(card => {
+        const nome = card.getAttribute('data-nome')?.toLowerCase() || "";
+        const categoria = card.getAttribute('data-categoria')?.toLowerCase() || "";
+        if (nome.includes(termo) || categoria.includes(termo)) {
+            card.style.display = "block";
+            encontrouAlgo = true;
+        } else {
+            card.style.display = "none";
+        }
     });
-    containerItens.innerHTML = "";
 }
-filtrarEExibir();
+filtrarCardsExistentes();

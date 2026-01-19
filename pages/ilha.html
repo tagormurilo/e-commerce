@@ -9,7 +9,7 @@
     <link href="../pages/componets/fStyle.css" rel="stylesheet">
     <link href="../pages/componets/hStyle.css" rel="stylesheet">
     <link href="../pages/componets/mStyle.css" rel="stylesheet">
-    <link href="listItemStyle.css" rel="stylesheet">
+    <link href="descriptionStyle.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -85,44 +85,53 @@
     </div>
     <!-- Conteúdo -->
     <main>
-        <div class="card produto" style="width: 18rem;">
-            <img src="../pages/images/produtos/mago_negro.jpg" class="card-img-top" alt="...">
+        <div class="card text-center produto">
             <div class="card-body">
-                <label for="cardButton"><b>Raridade</b></label><br>
-                <button class="btn btn-outline btn-custom" type="button">Ultra Rara</button>
-                <a href="mago_negro.html" class="title"><h5 class="card-title name-item">Mago Negro</h5></a>
-                <h5>R$ <span class="preco" data-valor="18,00">18,00</span></h5>
-                <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                <section class="inicial" id="inicio">
+                    <img src="../pages/images/produtos/ilha.jpg" class="card-img-top" alt="...">
+                    <label for="cardButton"><b>Raridade</b></label><br>
+                    <button class="btn btn-outline btn-custom" type="button">Comum</button>
+                    <h5 class="card-title name-item">Ilha</h5>
+                    <h5>R$ <span class="preco" data-valor="0,20">0,20</span></h5>
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
+                            <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
+                        </div>
                     </div>
-                    <div class="btn-group me-2" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
-                        <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
-                    </div>
-                </div>
-                <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
+                    <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
+                </section>
             </div>
         </div>
-        <div class="card produto" style="width: 18rem;">
-            <img src="../pages/images/produtos/decode_talker.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <label for="cardButton"><b>Raridade</b></label><br>
-                <button class="btn btn-outline btn-custom" type="button">Ultra Rara</button>
-                <a href="decode_talker.html" class="title"><h5 class="card-title name-item">Decodificar Transmissor</h5></a>
-                <h5>R$ <span class="preco" data-valor="1,00">1,00</span></h5>
-                <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-qtd" placeholder="Qtd." aria-label="Input group example" aria-describedby="btnGroupAddon">
-                    </div>
-                    <div class="btn-group me-2" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-outline btn-custom btn-menos">-</button>
-                        <button type="button" class="btn btn-outline btn-custom btn-mais">+</button>
-                    </div>
+        <section class="description-produto" id="descricao">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Descrição do Produto</h2>
+                    <p>
+                        Tipo: Azul <br>
+                        Terreno Básico <br><br>
+
+                        Descrição  <br>
+                        Um tipo de terreno básico que gera mana azul, essencial para lançar magias azuis, representando porções de terra cercadas por água e são fundamentais na estratégia de jogadores que usam a cor azul.
+                    </p>
                 </div>
-                <button class="btn btn-outline btn-custom adicionar-carinho" type="button">Adicionar ao Carrinho</button>
             </div>
-        </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Coleção</h2>
+                    <p>
+                        Commander 19 <br>
+                        Junte-se à fragrância. Commander é um formato multijogador Magic: The Gathering (MTG) onde alianças são formadas, amigos são traídos e ranores são reembolsados com uma vingança. <br><br>
+
+                        Código <br> 
+                        291
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <nav class="navbar bg-body-tertiary my-custom-navbar" id="footer">
